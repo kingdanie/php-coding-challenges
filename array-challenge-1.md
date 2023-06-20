@@ -1,5 +1,5 @@
 # Array Challenge
-Have the function ArrayChallenge(arr) take the array of integers stored in arr 
+> Have the function ArrayChallenge(arr) take the array of integers stored in arr 
 which will always contain an even amount of integers, 
 and determine how they can be split into two even sets of 
 integers each so that both sets add up to the same number. 
