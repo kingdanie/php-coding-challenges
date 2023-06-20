@@ -39,7 +39,7 @@ Your ChallengeToken: ml93iqud062
 ?>
 ```
 
-##The solution
+## The solution
 ```php
 <?php 
 
