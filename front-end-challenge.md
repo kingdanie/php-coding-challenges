@@ -4,7 +4,7 @@
 
 Submit your code once it is complete and our system will validate your output.
 
-See the code below: 
+> See the code below: 
 
 ```javascript
 import $ from "jquery";
@@ -12,9 +12,11 @@ const rootApp = document.getElementById("root");
 rootApp.innerHTML = '<button>ON</button>';
 ```
 
+
 ## The Solution
 
 ```javascript
+
 import $ from "jquery";
 
 const rootApp = document.getElementById ("root") ;
@@ -32,4 +34,6 @@ rootApp-addEventListener("click", function() {
     rootApp.classList.remove('off");
     rootApp.classList.add('on');
   }
+}
+
 ```
