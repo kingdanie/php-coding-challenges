@@ -5,16 +5,19 @@ properly handle exceptions.
 You don't have to worry about the rest of the application. Also, all necessary
 classes will be imported out of the box, so you don't need to think about
 adding any "use" statements.
-Requirements
+
+#### Requirements
+
 Your command handler must:
 1. Create a BlogPost object based on the data provided in the
 UpdatePost command.
 2. Update the post using the PostUpdater service provided in the handler
 constructor.
-Dispatch the PostUpdated event with a proper post ID using the
+3. Dispatch the PostUpdated event with a proper post ID using the
 EventDispatcher service, assuming no exceptions were thrown while
 performing the operations described in points 1 and 2 above.
-Handle an exceptions that occur, depending on the exception class.
+4. Handle an exceptions that occur, depending on the exception class.
+   
 The following table shows how exceptions should be handled depending on
 their class:
 
@@ -25,7 +28,7 @@ their class:
 | PostBlockedForEditing               | catch it and throw FailedToUpdatePost instead |
 | any other throwable                 | catch it and throw FailedToUpdatePost instead |
 
-Assumptions
+#### Assumptions
 
 The initial handler looks like this:
 
@@ -115,7 +118,7 @@ already exist.
 * No exception/error will be thrown within this task unless it is mentioned in the proper class description.
 
   
-Hints
+#### Hints
 
 * Look closely at the object contracts presented in the Assumptions section for method arguments and
 possible throwables.
