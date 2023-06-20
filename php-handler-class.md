@@ -18,10 +18,10 @@ Handle an exceptions that occur, depending on the exception class.
 The following table shows how exceptions should be handled depending on
 their class:
 
-| Exception name                      | Way of handling                     |
-| ----------------------------------- | ----------------------------------: |
-| PostDoesNotExist                    | let it bubble out of the handler    |
-| TitleTooLong                        | let it bubble out of the handler    |
+| Exception name                      | Way of handling                               |
+| ----------------------------------- | --------------------------------------------: |
+| PostDoesNotExist                    | let it bubble out of the handler              |
+| TitleTooLong                        | let it bubble out of the handler              |
 | PostBlockedForEditing               | catch it and throw FailedToUpdatePost instead |
 | any other throwable                 | catch it and throw FailedToUpdatePost instead |
 
@@ -67,28 +67,32 @@ The UpdatePost object used as an argument for the handle method is defined as fo
 ```php
 class UpdatePost
 {
-public function __construct (int $postId, int SuserId, string $title,
-string content) {//.
-..f;
-public function getPostId(): int (//...}:
-public function getUserId(): int {//.
-.:
-public function getTitle(): string {//.
-public function getContent(): string {//...};
+    public function __construct (int $postId, int SuserId, string $title, string $content) {//...};
+    public function getPostId(): int (//...};
+    public function getUserId(): int {//...};
+    public function getTitle(): string {//...};
+    public function getContent(): string {//...};
+}
+```
+
 The handler has access to two internal services:
-a post updater;
-an event dispatcher.
+* a post updater;
+* an event dispatcher.
+  
 They will be used to perform all necessary operations within the handler.
+
 Using the PostUpdater
 This service is responsible for updating the blog post. It implements the following interface:
+
+```php
 interface PostUpdater
 {
-/**
-* @throws PostDoesNotExist
-* @throws PostBlockedForEditing
-* @throws \Throwable
-*/
-public function update (BlogPost $post): void;
+    /**
+    * @throws PostDoesNotExist
+    * @throws PostBlockedForEditing
+    * @throws \Throwable
+    */
+    public function update (BlogPost $post): void;
 }
 ```
 
@@ -103,19 +107,23 @@ __construct (int SpostId, int SuserId)
 }
 ```
 
-* For the sake of clarity, you can safely assume that:
-All classes mentioned in the task are in the same directory; there is no need to include them.
-You do not have to write your own implementations of any class provided here; please assume they
+
+For the sake of clarity, you can safely assume that:
+* All classes mentioned in the task are in the same directory; there is no need to include them.
+* You do not have to write your own implementations of any class provided here; please assume they
 already exist.
-No exception/error will be thrown within this task unless it is mentioned in the proper class description.
+* No exception/error will be thrown within this task unless it is mentioned in the proper class description.
+
+  
 Hints
+
 * Look closely at the object contracts presented in the Assumptions section for method arguments and
 possible throwables.
 
-Think carefully about what error/exception you need to catch (or not), and in what order.
-If the tests throw errors concerning not imported classes, make sure to check for possible spelling
+* Think carefully about what error/exception you need to catch (or not), and in what order.
+* If the tests throw errors concerning not imported classes, make sure to check for possible spelling
 mistakes. There is no need of writing any use statements in this task.
-You will be using PHP 8.0 in this task.
+* You will be using PHP 8.0 in this task.
 
 
  
