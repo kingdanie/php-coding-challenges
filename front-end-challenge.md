@@ -7,10 +7,16 @@ Submit your code once it is complete and our system will validate your output.
 > See the code below: 
 
 ```javascript
+
+<img width="1272" alt="frontend-challenge" src="https://github.com/kingdanie/php-coding-challenges/assets/52611355/d8bda559-0ef1-415d-b66a-37b5e6864d30">
+
 import $ from "jquery";
 const rootApp = document.getElementById("root");
 rootApp.innerHTML = '<button>ON</button>';
 ```
+
+
+
 
 
 ## The Solution
