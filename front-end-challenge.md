@@ -34,6 +34,6 @@ rootApp-addEventListener("click", function() {
     rootApp.classList.remove('off");
     rootApp.classList.add('on');
   }
-}
+});
 
 ```
