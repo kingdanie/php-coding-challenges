@@ -1,4 +1,5 @@
-<!-- Have the function StringChallenge(str,num) take the str parameter and perform a 
+# Caesar Cipher Coding Task
+Have the function StringChallenge(str,num) take the str parameter and perform a 
 Caesar Cipher shift on it using the num parameter as the shifting number. 
 A Caesar Cipher works by shifting each letter in the string N places in 
 the alphabet (in this case N will be num). Punctuation, spaces, and capitalization 
@@ -8,19 +9,23 @@ Once your function is working, take the final output string and concatenate
 it with your ChallengeToken, and then replace every third character with an X. 
 
 Your ChallengeToken: 67kseucpjbd
-Examples
 
+### Examples
+
+```
 Input: "Hello" & num = 4 
 Output: Lipps 
 Final Output: LiXpsX7kXeuXpjXd
 
 Input: "abc" & num = 0 
 Output: abc 
-Final Output: abX67XseXcpXbd -->
+Final Output: abX67XseXcpXbd
+```
 
 
-##The solution
+## The solution
 
+```php
 function StringChallenge($str, $num) {
     $arr = [];
     $re = '/[a-z]/i';
@@ -36,4 +41,4 @@ function StringChallenge($str, $num) {
     }
     return implode("", $arr);
 }
-
+```
